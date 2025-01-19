@@ -57,7 +57,7 @@ var snowStorm = (function(window, document) {
     noFixed = (isBackCompatIE || isIE6),
     screenX = null, screenX2 = null, screenY = null, scrollY = null, docHeight = null, vRndX = null, vRndY = null,
     windOffset = 1,
-    windMultiplier = 2,
+    windMultiplier = 1,
     flakeTypes = 6,
     fixedForEverything = false,
     targetElementIsRelative = false,
