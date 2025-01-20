@@ -3,107 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>woe.baby</title>
-    <link rel="icon" href="media/u1zpy5.png" type="image/png">
-    <link href="css/xx.css" rel="stylesheet">
+    <meta http-equiv="refresh" content="3; url=https://woe.baby">
+    <title>404 Not Found</title>
     <style>
         body {
-            margin: 0;
-            overflow: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+            color: #333;
         }
 
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
         }
 
-        .enter-button {
-            font-size: 20px;
-            background: none;
-            color: white;
-            border: 1px solid gray;
-            padding: 8px 15px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
-            .enter-button:hover {
-                background-color: white;
-                color: black;
-                border-color: white;
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
             }
-
-        #main-content {
-            display: none;
-        }
     </style>
 </head>
 <body>
-
-    <!-- Audio Element to play the MP3 in the background -->
-    <audio id="background-audio" preload="auto" loop>
-        <source src="media/hoe - imsg.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <div id="loading-screen">
-        <button class="enter-button" onclick="loadContent()">u_,u</button>
-    </div>
-
-    <div id="main-content">
-        <div class="image-container">
-            <img src="media/ghwj5j.png" alt="Example Image">
-            <div class="text">
-                private.
-            </div>
-
-            <div class="box-small">
-                managed & created by xay.
-            </div>
-
-            <div class="box">
-                <a href="https://woe.baby/x">xay</a>
-                <a href="https://woe.baby/soon">dray</a>
-                <a href="https://woe.baby/soon">suu</a>
-                <div class="box-footer">
-                    2025
-                </div>
-            </div>
-            <div class="box-footer">
-                woe.baby
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <script>
-        window.onload = function () {
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('loading-screen').style.display = 'flex';
-        };
-
-        function loadContent() {
-            document.getElementById('loading-screen').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            document.body.style.overflow = 'auto';
-
-            // Play the background audio when the "enter" button is clicked
-            var audio = document.getElementById('background-audio');
-            audio.volume = 0.1;  // Set the volume to 50%
-            audio.play();
-        }
-    </script>
-
-    <script src="js/flexx.js"></script>
-
+    <h1>404 - Page Not Found</h1>
+    <p>Sorry, the page you are looking for does not exist.</p>
+    <p>You will be redirected to <a href="https://woe.baby">https://woe.baby</a> in a few seconds.</p>
 </body>
 </html>
