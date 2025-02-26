@@ -11,7 +11,7 @@
     <meta name="author" content="woe.baby">
     <meta property="og:type" content="site">
     <meta property="og:title" content="jae">
-    <meta property="og:url" content="https://woe.baby/1">
+    <meta property="og:url" content="https://woe.baby/x">
     <meta itemprop="name" content="jae">
     <meta itemprop="description" content="woe">
     <meta name="description" content="woe">
@@ -22,6 +22,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.8, user-scalable=no">
 </head>
 <body>
+
+    <body>
+
+        <video autoplay muted loop id="bgVideo">
+            <source src="https://woe.baby/1/media/ugly.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+            /* Style for background video */
+            #bgVideo {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1; /* Send it behind other content */
+            }
+
+            body {
+                user-select: none; /* Prevent text selection */
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        </style>
+
+        <!-- Your existing content goes here -->
 
     <style>
         .musicbtn {
@@ -59,63 +87,54 @@
             visibility: visible;
             opacity: 1;
         }
-
-        <!-- Background Video -->
-        <video autoplay muted loop id="bgVideo" >
-        <source src="https://woe.baby/1/media/ugly.mp4" type="video/mp4" >
-        Your browser does not support the video tag.
-        </video >
-
-        <style >
-        /* Style for background video */
-        #bgVideo {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Send it behind other content */
-        }
-
-        body {
-            user-select: none; /* Prevent text selection */
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
     </style>
 
-    <audio loop id="audioatp" src="https://woe.baby/1/media/ugly.mp3"></audio>
+    <audio loop="" id="audioatp" src="https://woe.baby/1/media/ugly.mp3"></audio>
 
-    <div class="center">
-        <div class="container glass">
-            <p class="badges">
-                <img class="pfp-image" src="https://woe.baby/1/images/image.jpg" alt="pfp">
-            </p>
-            <p class="username" style="color:#ffffff">
-                <span class="sparkle">jae</span>
-            </p>
-            <h4><span id="bio">bleh</span><span id="pipe">_</span></h4>
-            <div class="socials">
-                <div class="tooltip">
-                    <i class="fa-brands fa-discord social-icons" onclick="copyToClipboard('jae0777')"></i>
-                </div>
-                <div class="tooltip">
-                    <a target="_blank" href="https://www.roblox.com/users/5163404145/profile">
-                        <i class="fa-solid fa-globe social-icons"></i>
-                    </a>
-                </div>
-                <div class="tooltip">
-                    <a target="_blank" href="https://www.rolimons.com/player/5163404145">
-                        <i class="fa-solid fa-globe social-icons"></i>
+    <div class="">
+        <div class="center">
+            <div class="container glass">
+                <p class="badges">
+                    <img class="" src="" title="">
+                    <img class="pfp-image" src="https://woe.baby/1/images/image.jpg" alt="pfp">
+                </p>
+                <p class="username" style="color:#ffffff">
+                    <span class="sparkle">jae</span>
+                </p>
+
+                <p></p>
+                <h4><span id="bio">bleh</span><span id="pipe">_</span></h4>
+                <div class="socials">
+                    <div class="tooltip">
+                        <i class="fa-brands fa-discord social-icons" onclick="copyToClipboard('0woe')"></i>
+                    </div>
+                    <div class="tooltip">
+                        <a target="_blank" href="https://wristblade.lol">
+                            <i class="fa-solid fa-globe social-icons"></i>
+                        </a>
+                    </div>
+                    <div class="tooltip">
+                        <a target="_blank" href="https://wristblade.lol">
+                            <i class="fa-solid fa-globe social-icons"></i>
+                        </a>
+                    </div>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+
+    <div id="blurthepage" class="blurpage">
+        <div class="center">
+            <button class="musicbtn" id="musicbtn">
+                <i id="volumebtn" class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </div>
 
     <script>
+        // Function to copy text to clipboard
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 alert("Copied discord username: " + text);
@@ -123,7 +142,33 @@
                 console.error("Failed to copy: ", err);
             });
         }
+
+        // Disable right-click menu
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        // Disable keyboard shortcuts like F12, Ctrl+Shift+I, Ctrl+U, and Ctrl+Shift+C
+        window.addEventListener("keydown", function (event) {
+            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.key === "U") || (event.ctrlKey && event.shiftKey && event.key === "C")) {
+                event.preventDefault();
+            }
+        });
+
+        // Detect and block developer tools
+        setInterval(function () {
+            const devToolsOpen = /./;
+            devToolsOpen.toString = function () {
+                alert("Developer tools are blocked.");
+            };
+        }, 1000);
     </script>
+
+    <script src="https://woe.baby/1/js/music.js"></script>
+    <script src="https://woe.baby/1/js/snowstorm.js"></script>
+    <script src="https://woe.baby/1/js/bio.js"></script>
+
+    <a href="https://woe.baby"><p class="mark">2025</p></a>
 
 </body>
 </html>
