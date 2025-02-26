@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://woe.baby/1/css/style.css">
+    <title>jae</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.8, user-scalable=no">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="https://woe.baby/1/media/ugly.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <style>
+        /* Style for background video */
+        #bgVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Send it behind other content */
+        }
+
+        body {
+            user-select: none; /* Prevent text selection */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+
+    <audio loop id="audioatp" src="https://woe.baby/1/media/ugly.mp3"></audio>
+
+    <div class="center">
+        <div class="container glass">
+            <p class="badges">
+                <img class="pfp-image" src="https://woe.baby/1/images/image.png" alt="pfp">
+            </p>
+            <p class="username" style="color:#ffffff">
+                <span class="sparkle">jae</span>
+            </p>
+            <h4><span id="bio">kush kush</span><span id="pipe">_</span></h4>
+            <div class="socials">
+                <div class="tooltip">
+                    <a target="_blank" href="https://www.roblox.com/users/5163404145/profile/">
+                        <i class="ffa-solid fa-globe"></i>
+                    </a>
+                </div>
+                <div class="tooltip">
+                    <a target="_blank" href="https://www.rolimons.com/player/5163404145/">
+                        <i class="fa-solid fa-globe"></i>
+                    </a>
+                </div>
+                <div class="tooltip">
+                    <i class="fa-brands fa-discord social-icons" onclick="copyToClipboard('jae0777')"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied discord username: " + text);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
+
+</body>
+</html>
