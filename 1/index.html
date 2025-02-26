@@ -23,13 +23,50 @@
 </head>
 <body>
 
-    <!-- Background Video -->
-    <video autoplay muted loop id="bgVideo">
-        <source src="https://woe.baby/1/media/ugly.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
     <style>
+        .musicbtn {
+            background: #000000;
+        }
+
+        .username {
+            font-family: 'Minecraftia';
+        }
+
+        body {
+            background: #000000 center center;
+            background-size: cover;
+            user-select: none; /* Prevent text selection */
+        }
+
+        .tooltip span {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the icon */
+            left: 50%;
+            margin-left: -70px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover span {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        <!-- Background Video -->
+        <video autoplay muted loop id="bgVideo" >
+        <source src="https://woe.baby/1/media/ugly.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+        </video >
+
+        <style >
         /* Style for background video */
         #bgVideo {
             position: fixed;
