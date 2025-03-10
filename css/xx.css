@@ -42,7 +42,7 @@ img {
 .box-small {
     margin-top: 1rem;
     margin-bottom: 0.67rem; 
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #262626;
     box-sizing: border-box;
     color: #FFFFFF;
@@ -60,7 +60,7 @@ img {
 
 .box {
     margin-top: 4rem; 
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1.2px solid #262626;
     box-sizing: border-box;
     color: #FFFFFF;

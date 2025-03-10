@@ -12,6 +12,30 @@
             overflow: hidden;
         }
 
+        /* Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            display: none; /* Initially hidden */
+        }
+
+            .video-container video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+            }
+
         #loading-screen {
             position: fixed;
             top: 0;
@@ -48,10 +72,17 @@
     </style>
 </head>
 <body>
+    <!-- Video Background -->
+    <div class="video-container" id="video-container">
+        <video id="bg-video" loop muted playsinline>
+            <source src="media/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <!-- Audio Element to play the MP3 in the background -->
     <audio id="background-audio" preload="auto" loop>
-        <source src="media/hoe - imsg.mp3" type="audio/mp3">
+        <source src="media/xaviersobased.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -76,14 +107,13 @@
                 <a href="https://woe.baby/1">jae</a>
                 <a href="https://woe.baby/soon">suu</a>
                 <div class="box-footer">
-                    2025
+                    woe.baby
                 </div>
             </div>
             <div class="box-footer">
-                woe.baby
+                2025
             </div>
         </div>
-    </div>
     </div>
 
     <script>
@@ -99,12 +129,17 @@
 
             // Play the background audio when the "enter" button is clicked
             var audio = document.getElementById('background-audio');
-            audio.volume = 0.1;  // Set the volume to 50%
+            audio.volume = 0.1;  // Set the volume to 10%
             audio.play();
+
+            // Show and play the video
+            var videoContainer = document.getElementById('video-container');
+            var video = document.getElementById('bg-video');
+            videoContainer.style.display = 'block';
+            video.play();
         }
     </script>
 
     <script src="js/flexx.js"></script>
-
 </body>
 </html>
