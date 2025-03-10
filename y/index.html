@@ -23,129 +23,139 @@
 </head>
 <body>
 
-    <style>
-        .musicbtn {
-            background: #000000;
-        }
+    <body>
 
-        .username {
-            font-family: 'Minecraftia';
-        }
+        <video autoplay muted loop id="bgVideo">
+            <source src="https://woe.baby/1/media/ugly.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-        body {
-            background: #000000 center center;
-            background-size: cover;
-            user-select: none; /* Prevent text selection */
-        }
+        </style>
 
-        .tooltip span {
-            visibility: hidden;
-            width: 140px;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%; /* Position the tooltip above the icon */
-            left: 50%;
-            margin-left: -70px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+        <!-- Your existing content goes here -->
 
-        .tooltip:hover span {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
+        <style>
+            .musicbtn {
+                background: #000000;
+            }
 
-    <audio loop="" id="audioatp" src="https://woe.baby/y/media/ugly.mp3"></audio>
+            .username {
+                font-family: 'Minecraftia';
+            }
 
-    <div class="">
-        <div class="center">
-            <div class="container glass">
-                <p class="badges">
-                    <img class="" src="" title="">
-                    <img class="pfp-image" src="https://woe.baby/y/images/image.png" alt="pfp">
-                </p>
-                <p class="username" style="color:#ffffff">
-                    <span class="sparkle">yen</span>
-                </p>
+            body {
+                background: #000000 center center;
+                background-size: cover;
+                user-select: none; /* Prevent text selection */
+            }
 
-                <p></p>
-                <h4><span id="bio">kush kush</span><span id="pipe">_</span></h4>
-                <div class="socials">
-                    <div class="tooltip">
-                        <a target="_blank" href="https://open.spotify.com/artist/4rbmHBdRN4PMk2os4xNi17">
-                            <i class="fa-brands fa-spotify social-icons"></i>
+            .tooltip span {
+                visibility: hidden;
+                width: 140px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 5px;
+                padding: 5px;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%; /* Position the tooltip above the icon */
+                left: 50%;
+                margin-left: -70px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .tooltip:hover span {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
+        <audio loop="" id="audioatp" src="https://woe.baby/y/media/ugly.mp3"></audio>
+
+        <div class="">
+            <div class="center">
+                <div class="container glass">
+                    <p class="badges">
+                        <img class="" src="" title="">
+                        <img class="pfp-image" src="https://woe.baby/y/images/image.png" alt="pfp">
+                    </p>
+                    <p class="username" style="color:#ffffff">
+                        <span class="sparkle">yen</span>
+                    </p>
+
+                    <p></p>
+                    <h4><span id="bio">kush kush</span><span id="pipe">_</span></h4>
+                    <div class="socials">
+                        <div class="tooltip">
+                            <a target="_blank" href="https://open.spotify.com/artist/4rbmHBdRN4PMk2os4xNi17">
+                                <i class="fa-brands fa-spotify social-icons"></i>
+                            </a>
+                        </div>
+                        <div class="tooltip">
+                            <a target="_blank" href="https://www.instagram.com/cementedtoyou/">
+                                <i class="fa-brands fa-instagram social-icons"></i>
+                            </a>
+                        </div>
+                        <div class="tooltip">
+                            <i class="fa-brands fa-discord social-icons" onclick="copyToClipboard('qhmb')"></i>
+                        </div>
+                        <div class="tooltip">
+                            <a target="_blank" href="https://soundcloud.com/sylhouet">
+                                <i class="fa-brands fa-soundcloud social-icons"></i>
+                            </a>
+                        </div>
                         </a>
                     </div>
-                    <div class="tooltip">
-                        <a target="_blank" href="https://www.instagram.com/cementedtoyou/">
-                            <i class="fa-brands fa-instagram social-icons"></i>
-                        </a>
-                    </div>
-                    <div class="tooltip">
-                        <i class="fa-brands fa-discord social-icons" onclick="copyToClipboard('qhmb')"></i>
-                    </div>
-                    <div class="tooltip">
-                        <a target="_blank" href="https://soundcloud.com/sylhouet">
-                            <i class="fa-brands fa-soundcloud social-icons"></i>
-                        </a>
-                    </div>
-                    </a>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
-    <div id="blurthepage" class="blurpage">
-        <div class="center">
-            <button class="musicbtn" id="musicbtn">
-                <i id="volumebtn" class="fas fa-volume-up"></i>
-            </button>
         </div>
-    </div>
 
-    <script>
-        // Function to copy text to clipboard
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Copied discord username: " + text);
-            }).catch(err => {
-                console.error("Failed to copy: ", err);
-            });
-        }
+        <div id="blurthepage" class="blurpage">
+            <div class="center">
+                <button class="musicbtn" id="musicbtn">
+                    <i id="volumebtn" class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
 
-        // Disable right-click menu
-        document.addEventListener("contextmenu", function (event) {
-            event.preventDefault();
-        });
-
-        // Disable keyboard shortcuts like F12, Ctrl+Shift+I, Ctrl+U, and Ctrl+Shift+C
-        window.addEventListener("keydown", function (event) {
-            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.key === "U") || (event.ctrlKey && event.shiftKey && event.key === "C")) {
-                event.preventDefault();
+        <script>
+            // Function to copy text to clipboard
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert("Copied discord username: " + text);
+                }).catch(err => {
+                    console.error("Failed to copy: ", err);
+                });
             }
-        });
 
-        // Detect and block developer tools
-        setInterval(function () {
-            const devToolsOpen = /./;
-            devToolsOpen.toString = function () {
-                alert("Developer tools are blocked.");
-            };
-        }, 1000);
-    </script>
+            // Disable right-click menu
+            document.addEventListener("contextmenu", function (event) {
+                event.preventDefault();
+            });
 
-    <script src="https://woe.baby/y/js/music.js"></script>
-    <script src="https://woe.baby/y/js/snowstorm.js"></script>
-    <script src="https://woe.baby/y/js/bio.js"></script>
+            // Disable keyboard shortcuts like F12, Ctrl+Shift+I, Ctrl+U, and Ctrl+Shift+C
+            window.addEventListener("keydown", function (event) {
+                if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.key === "U") || (event.ctrlKey && event.shiftKey && event.key === "C")) {
+                    event.preventDefault();
+                }
+            });
 
-    <a href="https://woe.baby"><p class="mark">2025</p></a>
+            // Detect and block developer tools
+            setInterval(function () {
+                const devToolsOpen = /./;
+                devToolsOpen.toString = function () {
+                    alert("Developer tools are blocked.");
+                };
+            }, 1000);
+        </script>
 
-</body>
+        <script src="https://woe.baby/y/js/music.js"></script>
+        <script src="https://woe.baby/y/js/snowstorm.js"></script>
+        <script src="https://woe.baby/y/js/bio.js"></script>
+
+        <a href="https://woe.baby"><p class="mark">2025</p></a>
+
+    </body>
 </html>
