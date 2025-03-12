@@ -1,58 +1,170 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta content="Cheeta" name="description">
     <link href="images/favicon.png" rel="icon">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Cheeta</title>
-	<link rel="stylesheet" href="https://woe.baby/s/css/__layout.svelte-fef4c181.css">
-	<link rel="stylesheet" href="https://woe.baby/s/css/index.svelte-bca1a9f3.css">
-	<link rel="modulepreload" href="/_app/immutable/start-34da1b8b.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-f547d9bd.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-4521f69b.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-93184915.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/index.svelte-13433fb4.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/verifyConfigObject-fbdca308.js">
+    <link rel="stylesheet" href="https://woe.baby/s/css/__layout.svelte-fef4c181.css">
+    <link rel="stylesheet" href="https://woe.baby/s/css/index.svelte-bca1a9f3.css">
+    <link rel="modulepreload" href="/_app/immutable/start-34da1b8b.js">
+    <link rel="modulepreload" href="/_app/immutable/chunks/index-f547d9bd.js">
+    <link rel="modulepreload" href="/_app/immutable/chunks/index-4521f69b.js">
+    <link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-93184915.js">
+    <link rel="modulepreload" href="/_app/immutable/pages/index.svelte-13433fb4.js">
+    <link rel="modulepreload" href="/_app/immutable/chunks/verifyConfigObject-fbdca308.js">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: black; /* Initial black background */
+        color: white; /* White text for visibility */
+        font-family: Arial, sans-serif;
+        height: 100vh; /* Full viewport height */
+        width: 100vw; /* Full viewport width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .blurred-background {
+        display: none; /* Hide blurred background until Enter is pressed */
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7); /* Slight black overlay */
+        z-index: 1;
+      }
+
+      .enter-button {
+        padding: 20px 40px;
+        font-size: 24px;
+        background-color: transparent; /* Transparent background */
+        color: red; /* Red text color */
+        border: 2px solid rgb(0, 0, 0); /* Red border */
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: none; /* Remove shadow */
+        transition: all 0.3s ease;
+      }
+
+      .enter-button:hover {
+        background-color: rgb(0, 0, 0); /* Light red background on hover */
+        border-color: rgb(0, 0, 0); /* Darker red border on hover */
+        color: rgb(255, 0, 0); /* Darker red text on hover */
+      }
+
+      .main-content {
+        display: none; /* Hide content initially */
+        padding: 20px;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
 </head>
 <body>
+    <!-- Black background and overlay with Enter button -->
+    <div class="overlay">
+        <button class="enter-button" id="enterButton">Enter</button>
+    </div>
 
+    <!-- Main content, initially hidden -->
+    <div class="main-content">
+        <main class="svelte-1gk2obd">
+            <section class="svelte-ku0hbo">
+                <div class="shadowWrapper">
+                    <div class="promo">
+                        <h3>LOOK<br> Outside<br> everybody dying</h3>
+                        <greed-icon>SUU</greed-icon>
+                    </div>
+                </div>
+            </section>
+        </main>
 
+        <nav class="svelte-1gk2obd">
+            <ul class="svelte-1gk2obd">
+                <li class="svelte-1gk2obd">
+                    <a href="http://notwitternigga.lol/" class="svelte-1gk2obd">
+                        <img alt="twitter url" src="https://woe.baby/s/images/twittericon.svg" class="svelte-1gk2obd">
+                    </a>
+                </li>
+                <li class="svelte-1gk2obd">
+                    <a href="https://youtu.be/pzp6tIMnzw4" class="svelte-1gk2obd">future</a>
+                </li>
+                <li class="svelte-1gk2obd">
+                    <a href="https://discord.gg/SNDRQRve2p" class="svelte-1gk2obd">
+                        <img alt="discord url" src="https://woe.baby/s/images/discord-white.svg" class="svelte-1gk2obd">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-<main class="svelte-1gk2obd">
+    <audio id="backgroundMusic" src="https://woe.baby/s/media\BLOCKSHIFT NUKE (1).mp3" preload="auto"></audio>
 
+    <script>
+        const enterButton = document.getElementById('enterButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const overlay = document.querySelector('.overlay');
+        const mainContent = document.querySelector('.main-content');
 
+        // When the Enter button is clicked, show the main content and play the music
+        enterButton.addEventListener('click', () => {
+            backgroundMusic.play();
+            overlay.style.display = 'none'; // Hide overlay after click
+            mainContent.style.display = 'block'; // Show the main content
+            document.body.style.backgroundColor = 'black'; // Keep background black
+        });
 
+        // Optionally, you can make the Enter button work when you press the Enter key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                backgroundMusic.play();
+                overlay.style.display = 'none'; // Hide overlay on Enter key press
+                mainContent.style.display = 'block'; // Show the main content
+                document.body.style.backgroundColor = 'black'; // Keep background black
+            }
+        });
+    </script>
 
+    <script type="module" data-sveltekit-hydrate="4gyqrz">
+        import { start } from "/_app/immutable/start-34da1b8b.js";
+        start({
+            target: document.querySelector('[data-sveltekit-hydrate="4gyqrz"]').parentNode,
+            paths: {"base":"","assets":""},
+            session: {},
+            route: true,
+            spa: false,
+            trailing_slash: "never",
+            hydrate: {
+                status: 200,
+                error: null,
+                nodes: [0, 6],
+                params: {},
+                routeId: ""
+            }
+        });
+    </script>
 
-<section class="svelte-ku0hbo"><div class="shadowWrapper"><div class="promo"><h3>LOOK<br>
-                    Outside<br>
-                    everybody dying
-                </h3>
-                    <greed-icon>SUU
-                    </greed-icon></div></div></section></main>
-
-<nav class="svelte-1gk2obd"><ul class="svelte-1gk2obd"><li class="svelte-1gk2obd"><a href="http://notwitternigga.lol/" class="svelte-1gk2obd"><img alt="twitter url" src="https://woe.baby/s/images/twittericon.svg" class="svelte-1gk2obd"></a></li>
-		<li class="svelte-1gk2obd"><a href="https://youtu.be/pzp6tIMnzw4" class="svelte-1gk2obd">future</a></li>
-		<li class="svelte-1gk2obd"><a href="https://discord.gg/SNDRQRve2p" class="svelte-1gk2obd"><img alt="discord url" src="https://woe.baby/s/images/discord-white.svg" class="svelte-1gk2obd"></a></li></ul>
-</nav>
-
-		<script type="module" data-sveltekit-hydrate="4gyqrz">
-		import { start } from "/_app/immutable/start-34da1b8b.js";
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="4gyqrz"]').parentNode,
-			paths: {"base":"","assets":""},
-			session: {},
-			route: true,
-			spa: false,
-			trailing_slash: "never",
-			hydrate: {
-				status: 200,
-				error: null,
-				nodes: [0, 6],
-				params: {},
-				routeId: ""
-			}
-		});
-	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/db/config">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"config_name\":\"smolbrains\",\"max_amount\":\"1000\",\"svvc\":true,\"local\":true,\"date_official\":\"09 June 2022 19:00 UTC\"}"}</script>
-
-
-</body></html>
+    <script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/db/config">
+        {"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"config_name\":\"smolbrains\",\"max_amount\":\"1000\",\"svvc\":true,\"local\":true,\"date_official\":\"09 June 2022 19:00 UTC\"}"}
+    </script>
+</body>
+</html>
