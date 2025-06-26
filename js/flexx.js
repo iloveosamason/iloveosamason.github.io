@@ -43,8 +43,7 @@ var snowStorm = (function(window, document) {
     this.flakeHeight = 8;           // Max pixel height reserved for snow element
     this.vMaxX = 5;                 // Maximum X velocity range for snow
     this.vMaxY = 4;                 // Maximum Y velocity range for snow
-    this.zIndex = 0;
-    this.flakeOpacity = 0.3; // Adjust opacity of snowflakes (0 = transparent, 1 = opaque)                // CSS stacking order applied to each snowflake
+    this.zIndex = 0;                // CSS stacking order applied to each snowflake
     
     // --- "No user-serviceable parts inside" past this point, yadda yadda ---
     
@@ -373,9 +372,6 @@ var snowStorm = (function(window, document) {
         this.o.setAttribute('class', storm.className);
       }
       this.o.style.color = storm.snowColor;
-      if (opacitySupported) {
-        this.o.style.opacity = storm.flakeOpacity;
-      }
       this.o.style.position = (fixedForEverything?'fixed':'absolute');
       if (storm.useGPU && features.transform.prop) {
         // GPU-accelerated snow.
